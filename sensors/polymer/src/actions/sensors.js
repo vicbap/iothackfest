@@ -6,7 +6,7 @@ export const searchSensors = (query) => (dispatch, getState) => {
 	const payload = query || {}
 	if (shouldSearchSensors(getState(), query)) {
 		dispatch(requestSensors(query));
-		fetch('/api/sensors/all',{ 
+		fetch('/sensors/all',{ 
 			method: 'POST',
 			credentials: 'include', 
 			headers: { "Content-Type": "application/json", "Accept": "application/json" }, 

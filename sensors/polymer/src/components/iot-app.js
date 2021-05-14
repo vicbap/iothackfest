@@ -47,11 +47,11 @@ class IotApp extends I18nLitElement {
 			--app-main-content-min-height: calc(100vh - var(--app-header-height) - var(--app-footer-height) + 1px);
 			
 			/* Default theme */
-			--app-primary-color: var(--paper-brown-700);
-			--app-primary-color-grad-l4: var(--paper-brown-400);
-			--app-primary-color-grad-l2: var(--paper-brown-200);
-			--app-primary-color-grad-l1: var(--paper-brown-100);
-			--app-primary-color-grad-l0: var(--paper-brown-50);
+			--app-primary-color: var(--paper-green-700);
+			--app-primary-color-grad-l4: var(--paper-green-400);
+			--app-primary-color-grad-l2: var(--paper-green-200);
+			--app-primary-color-grad-l1: var(--paper-green-100);
+			--app-primary-color-grad-l0: var(--paper-green-50);
 			--app-secondary-color: black;
 			
 			--app-dark-text-color: black;

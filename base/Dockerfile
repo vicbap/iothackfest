@@ -6,4 +6,5 @@ RUN dnf -y install python3-numpy python3-i2c-tools python3-pillow python3-setupt
 RUN dnf -y install python3-cffi
 RUN python3 -m pip install sounddevice
 RUN dnf -y install portaudio
+RUN dnf -y install python3-RPi.GPIO
 RUN dnf clean all
