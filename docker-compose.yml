@@ -3,7 +3,18 @@ services:
     collector:
         build: ./collector/
         container_name: collector
+        depends_on: 
+            - gateway
     gateway:
         build: ./gateway/
         container_name: gateway
+    portal:
+        build: ./sensors/
+        container_name: portal
+        environment:
+            - STATION_NAME=giot
+        ports:
+            - '8080:80'
+        expose:
+            - '80'
         
