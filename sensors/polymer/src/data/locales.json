@@ -1,0 +1,22 @@
+{
+  "en": {
+    "main": "QIoT",
+    "menu": "Menu",
+    "home": "Home",
+    "about": "About us",
+	"apmsg1": "You are now ",
+    "footer": "Made with Polymer",
+    "warning403": "You don't have permission to be here",
+    "warning404" : "Sorry, we couldn't find that page"
+  },
+  "es": {
+    "main": "QIoT",
+    "menu": "Menú",
+    "home": "Inicio",
+    "about": "Sobre nosotros",
+	"apmsg1": "Estas ",
+    "footer": "Hecho con Polymer",
+    "warning403": "No tiene permiso para estar aquí",
+    "warning404" : "Ohhhh, no encontramos esta página"
+  }
+}

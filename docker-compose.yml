@@ -1,0 +1,9 @@
+version: '3.3'
+services: 
+    collector:
+        build: ./collector/
+        container_name: collector
+    gateway:
+        build: ./gateway/
+        container_name: gateway
+        
