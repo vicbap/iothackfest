@@ -84,29 +84,29 @@ def read_particulates():
     idata = particulates.data
     output = []
 
-    pm1_0 = {tit: 'pm1_0', value: idata[0], unit: ''}
+    pm1_0 = {tit: 'pm1_0', value: idata[0], unit: 'ug/m3'}
     output.append(pm1_0)
-    pm2_5 = {tit: 'pm2_5', value: idata[1], unit: ''}
+    pm2_5 = {tit: 'pm2_5', value: idata[1], unit: 'ug/m3'}
     output.append(pm2_5)
-    pm10 = {tit: 'pm10', value: idata[2], unit: ''}
+    pm10 = {tit: 'pm10', value: idata[2], unit: 'ug/m3'}
     output.append(pm10)
-    pm1_0_atm = {tit: 'pm1_0_atm', value: idata[3], unit: ''}
+    pm1_0_atm = {tit: 'pm1_0_atm', value: idata[3], unit: 'ug/m3'}
     output.append(pm1_0_atm)
-    pm2_5_atm = {tit: 'pm2_5_atm', value: idata[4], unit: ''}
+    pm2_5_atm = {tit: 'pm2_5_atm', value: idata[4], unit: 'ug/m3'}
     output.append(pm2_5_atm)
-    pm10_atm = {tit: 'pm10_atm', value: idata[5], unit: ''}
+    pm10_atm = {tit: 'pm10_atm', value: idata[5], unit: 'ug/m3'}
     output.append(pm10_atm)
-    gt0_3um = {tit: 'gt0_3um', value: idata[6], unit: ''}
+    gt0_3um = {tit: 'gt0_3um', value: idata[6], unit: 'p/0.1L'}
     output.append(gt0_3um)
-    gt0_5um = {tit: 'gt0_5um', value: idata[7], unit: ''}
+    gt0_5um = {tit: 'gt0_5um', value: idata[7], unit: 'p/0.1L'}
     output.append(gt0_5um)
-    gt1_0um = {tit: 'gt1_0um', value: idata[8], unit: ''}
+    gt1_0um = {tit: 'gt1_0um', value: idata[8], unit: 'p/0.1L'}
     output.append(gt1_0um)
-    gt2_5um = {tit: 'gt2_5um', value: idata[9], unit: ''}
+    gt2_5um = {tit: 'gt2_5um', value: idata[9], unit: 'p/0.1L'}
     output.append(gt2_5um)
-    gt5_0um = {tit: 'gt5_0um', value: idata[10], unit: ''}
+    gt5_0um = {tit: 'gt5_0um', value: idata[10], unit: 'p/0.1L'}
     output.append(gt5_0um)
-    gt10um = {tit: 'gt10um', value: idata[11], unit: ''}
+    gt10um = {tit: 'gt10um', value: idata[11], unit: 'p/0.1L'}
     output.append(gt10um)
     
     return output
