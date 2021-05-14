@@ -50,7 +50,7 @@ class VwHome extends I18nLitElement {
 			<section ?hidden="${this._showOffline}">
 				<div class="sensors" ?hidden="${!this._sensor}">
 				  ${repeat(this._sensor, (item) => html`
-					<vb-sensor-row class="sensor" id=${item.id} tit="${item.tit}" value=${item.value} meassure=${item.meassure} language="${this._locale}" elevation=1 ></vb-sensor-row>
+					<vb-sensor-row class="sensor" id=${item.id} tit="${item.tit}" value=${item.value} unit=${item.unit} language="${this._locale}" elevation=1 ></vb-sensor-row>
 				  `)}
 				</div>
 			</section>

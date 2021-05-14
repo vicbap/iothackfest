@@ -1,44 +1,46 @@
-import { createSelector } from 'reselect';
-import {
-  REQUEST_SENSORS, RECEIVE_SENSORS, FAIL_SENSORS,
-} from '../actions/sensors.js';
+export const REQUEST_SENSORS = 'REQUEST_SENSORS';
+export const RECEIVE_SENSORS = 'RECEIVE_SENSORS';
+export const FAIL_SENSORS = 'FAIL_SENSORS';
 
-export const sensors = (state = {query: null}, action) => {
-  switch (action.type) {
-    case REQUEST_SENSORS:
-      return {
-        ...state,
-        items: null, // reset items
-        failure: false,
-        isFetching: true
-      };
-    case RECEIVE_SENSORS:
-	  // console.log(action)
-      return {
-        ...state,
-		items: action.items,
-        failure: false,
-        isFetching: false
-      };
-    case FAIL_SENSORS:
-      return {
-        ...state,
-        items: null,
-        failure: true,
-        isFetching: false
-      };
-    default:
-      return state;
-  }
+export const searchSensors = (query) => (dispatch, getState) => {
+	const payload = query || {}
+	if (shouldSearchSensors(getState(), query)) {
+		dispatch(requestSensors(query));
+		fetch('/api/sensors/all',{ 
+			method: 'POST',
+			credentials: 'include', 
+			headers: { "Content-Type": "application/json", "Accept": "application/json" }, 
+			body: JSON.stringify(payload) 
+		})
+		.then(res => res.json())
+		.then(data =>{ dispatch(receiveSensors(query, data)) })
+		.catch(() => dispatch(failSensors(query)));
+	}
+};
+
+const shouldSearchSensors = (state, query) => {
+  return state.sensors.failure || !state.sensors.isFetching;
 }
 
+const requestSensors = (query) => {
+  return {
+    type: REQUEST_SENSORS,
+    query
+  };
+};
 
-export const sensorSelector = state => state.sensors && state.sensors.items;
+const receiveSensors = (query, items) => {
+  // console.log(items)
+  return {
+    type: RECEIVE_SENSORS,
+    query,
+    items
+  };
+};
 
-export const sensorListSelector = createSelector(
-  sensorSelector,
-  (items) => {
-	// console.log(items)
-    return items ? Object.keys(items).map(key => items[key]) : [];
-  }
-);
+const failSensors = (query) => {
+  return {
+    type: FAIL_SENSORS,
+    query
+  };
+};

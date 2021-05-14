@@ -1,0 +1,7 @@
+{
+  "name": "qiot",
+  "short_name": "qiot",
+  "description": "ioT hackfest portal",
+  "start_url": "/",
+  "display": "standalone"
+}
