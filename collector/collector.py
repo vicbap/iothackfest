@@ -30,12 +30,13 @@ try:
         payload.temperature = bme280.get_temperature()
         payload.pressure = bme280.get_pressure()
         payload.humidity = bme280.get_humidity()
-        payload.particulates = pms5003.read()
+        
         payload.gas_adc = gas.read_adc()
         payload.gas_nh3 = gas.read_nh3()
         payload.gas_oxidising = gas.read_oxidising()
         payload.gas_reducing = gas.read_reducing()
 
+        particulates = pms5003.read()
         idata = particulates.data
 
         payload.pm1_0 = idata[0]
