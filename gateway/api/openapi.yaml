@@ -1,0 +1,115 @@
+openapi: 3.0.2
+info:
+  description: Registration Service
+  title: QioT - Registration Service
+  version: 1.0.0
+servers:
+- url: /
+paths:
+  /register:
+    description: The REST endpoint/path used to list and create zero or more `RegisterRequest`
+      entities.  This path contains a `GET` and `POST` operation to perform the list
+      and create tasks, respectively.
+    post:
+      description: Creates a new instance of a `RegisterRequest`.
+      operationId: createRegisterRequest
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterRequest'
+        description: A new `RegisterRequest` to be created.
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RegisterResponse'
+          description: Successful response.
+      summary: Create a RegisterRequest
+      x-contentType: application/json
+      x-accepts: application/json
+    summary: Path used to manage the list of registerrequests.
+  /v1/register:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterRequest'
+      responses:
+        "200":
+          description: OK
+      x-contentType: application/json
+      x-accepts: application/json
+  /register/{id}:
+    description: The REST endpoint/path used to get, update, and delete single instances
+      of an `RegisterRequest`.  This path contains `GET`, `PUT`, and `DELETE` operations
+      used to perform the get, update, and delete tasks, respectively.
+    get:
+      description: Gets the details of a single instance of a `RegisterRequest`.
+      operationId: getRegisterRequest
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RegisterResponse'
+          description: Successful response - returns a single `RegisterResponse`.
+      summary: Get a RegisterRequest
+      x-accepts: application/json
+    summary: Path used to manage a single RegisterRequest.
+components:
+  schemas:
+    RegisterRequest:
+      example:
+        serial: some text
+        name: some text
+        longitude: 3.6
+        latitude: 29.41
+        keyStorePassword: some text
+      properties:
+        serial:
+          type: string
+        name:
+          type: string
+        longitude:
+          format: double
+          type: number
+        latitude:
+          format: double
+          type: number
+        keyStorePassword:
+          description: KeyStore Password
+          type: string
+      title: Root Type for RegisterRequest
+      type: object
+    RegisterResponse:
+      example:
+        id: some text
+        truststore: <FILE>
+        keystore: <FILE>
+      properties:
+        id:
+          type: string
+        truststore:
+          format: byte
+          type: string
+        keystore:
+          format: byte
+          type: string
+      required:
+      - id
+      - keystore
+      - truststore
+      type: object
+
