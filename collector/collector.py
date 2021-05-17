@@ -31,7 +31,25 @@ try:
         payload.pressure = bme280.get_pressure()
         payload.humidity = bme280.get_humidity()
         payload.particulates = pms5003.read()
-        payload.gas_data = gas.read_all()
+        payload.gas_adc = gas.read_adc()
+        payload.gas_nh3 = gas.read_nh3()
+        payload.gas_oxidising = gas.read_oxidising()
+        payload.gas_reducing = gas.read_reducing()
+
+        idata = particulates.data
+
+        payload.pm1_0 = idata[0]
+        payload.pm2_5 = idata[1]
+        payload.pm10 = idata[2]
+        payload.pm1_0_atm = idata[3]
+        payload.pm2_5_atm = idata[4]
+        payload.pm10_atm = idata[5]
+        payload.gt0_3um = idata[6]
+        payload.gt0_5um = idata[7]
+        payload.gt1_0um = idata[8]
+        payload.gt2_5um = idata[9]
+        payload.gt5_0um = idata[10]
+        payload.gt10um = idata[11]
 
         resp = resp = requests.post(URL_GATEWAY, data=json.dumps(payload), headers={'Content-Type':'application/json'})
         if resp.status_code != 201:
