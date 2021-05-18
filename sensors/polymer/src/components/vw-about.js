@@ -22,6 +22,10 @@ class VwAbout extends I18nLitElement {
 
 			<section>
 				<h2>${litgetronics}</h2>
+				<p>Team leader - César Rodríguez Herrera - cesar.rodriguez@getronics.com</p>
+				<p>Team member - Víctor Bayona Pons - victor-manuel.bayona@getronics.com</p>
+				<p>Team member - Pablo-Ramsés Alonso Martín - pablo-ramses.alonso@getronics.com</p>
+				<p>Team member - Jose Antonio Arenas Álvaro - jose-antonio.arenas@getronics.com</p>
 			</section>
 
 		`;
