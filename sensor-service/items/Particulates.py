@@ -44,7 +44,7 @@ def all():
 
 
 # pm1.0 ug/m3 (ultrafine particles)
-@gas_blueprint.route("/pm1_0")
+@particulates_blueprint.route("/pm1_0")
 def pm1_0():
     psm5003data = pms5003.read()
     readings=psm5003data.data
@@ -52,7 +52,7 @@ def pm1_0():
 
 
 # pm2.5 ug/m3 (combustion particles, organic compounds, metals)
-@gas_blueprint.route("/pm2_5")
+@particulates_blueprint.route("/pm2_5")
 def pm2_5():
     psm5003data = pms5003.read()
     readings=psm5003data.data
@@ -60,7 +60,7 @@ def pm2_5():
 
 
 # pm10 ug/m3  (dust, pollen, mould spores)
-@gas_blueprint.route("/pm10")
+@particulates_blueprint.route("/pm10")
 def pm10():
     psm5003data = pms5003.read()
     readings=psm5003data.data
@@ -68,7 +68,7 @@ def pm10():
 
 
 # pm1.0 ug/m3 (atmos env)
-@gas_blueprint.route("/pm1_0_atm")
+@particulates_blueprint.route("/pm1_0_atm")
 def pm1_0_atm():
     psm5003data = pms5003.read()
     readings=psm5003data.data
@@ -76,7 +76,7 @@ def pm1_0_atm():
 
 
 # pm2.5 ug/m3 (atmos env)
-@gas_blueprint.route("/pm2_5_atm")
+@particulates_blueprint.route("/pm2_5_atm")
 def pm2_5_atm():
     psm5003data = pms5003.read()
     readings=psm5003data.data
@@ -84,7 +84,7 @@ def pm2_5_atm():
 
 
 # pm10 ug/m3 (atmos env)
-@gas_blueprint.route("/pm10_atm")
+@particulates_blueprint.route("/pm10_atm")
 def pm10_atm():
     psm5003data = pms5003.read()
     readings=psm5003data.data
@@ -92,7 +92,7 @@ def pm10_atm():
 
 
 # >0.3um in 0.1L air:
-@gas_blueprint.route("/gt0_3um")
+@particulates_blueprint.route("/gt0_3um")
 def gt0_3um():
     psm5003data = pms5003.read()
     readings=psm5003data.data
@@ -100,7 +100,7 @@ def gt0_3um():
 
 
 # >0.5um in 0.1L air:
-@gas_blueprint.route("/gt0_5um")
+@particulates_blueprint.route("/gt0_5um")
 def gt0_5um():
     psm5003data = pms5003.read()
     readings=psm5003data.data
@@ -108,7 +108,7 @@ def gt0_5um():
 
 
 # >1.0um in 0.1L air:
-@gas_blueprint.route("/gt1_0um")
+@particulates_blueprint.route("/gt1_0um")
 def gt1_0um():
     psm5003data = pms5003.read()
     readings=psm5003data.data
@@ -116,7 +116,7 @@ def gt1_0um():
 
 
 # >2.5um in 0.1L air:
-@gas_blueprint.route("/gt2_5um")
+@particulates_blueprint.route("/gt2_5um")
 def gt2_5um():
     psm5003data = pms5003.read()
     readings=psm5003data.data
@@ -124,7 +124,7 @@ def gt2_5um():
 
 
 # >5.0um in 0.1L air:
-@gas_blueprint.route("/gt5_0um")
+@particulates_blueprint.route("/gt5_0um")
 def gt5_0um():
     psm5003data = pms5003.read()
     readings=psm5003data.data
@@ -132,7 +132,7 @@ def gt5_0um():
 
 
 # >10um in 0.1L air:
-@gas_blueprint.route("/gt10um")
+@particulates_blueprint.route("/gt10um")
 def gt10um():
     psm5003data = pms5003.read()
     readings=psm5003data.data
