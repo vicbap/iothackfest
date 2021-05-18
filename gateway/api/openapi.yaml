@@ -1,24 +1,22 @@
+---
 openapi: 3.0.2
 info:
-  description: Registration Service
   title: QioT - Registration Service
   version: 1.0.0
-servers:
-- url: /
+  description: Registration Service
 paths:
   /register:
-    description: The REST endpoint/path used to list and create zero or more `RegisterRequest`
-      entities.  This path contains a `GET` and `POST` operation to perform the list
-      and create tasks, respectively.
+    summary: Path used to manage the list of registerrequests.
+    description: "The REST endpoint/path used to list and create zero or more `RegisterRequest`\
+      \ entities.  This path contains a `GET` and `POST` operation to perform the\
+      \ list and create tasks, respectively."
     post:
-      description: Creates a new instance of a `RegisterRequest`.
-      operationId: createRegisterRequest
       requestBody:
+        description: A new `RegisterRequest` to be created.
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/RegisterRequest'
-        description: A new `RegisterRequest` to be created.
         required: true
       responses:
         "201":
@@ -27,10 +25,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/RegisterResponse'
           description: Successful response.
+      operationId: createRegisterRequest
       summary: Create a RegisterRequest
-      x-contentType: application/json
-      x-accepts: application/json
-    summary: Path used to manage the list of registerrequests.
+      description: Creates a new instance of a `RegisterRequest`.
   /v1/register:
     post:
       requestBody:
@@ -41,23 +38,12 @@ paths:
       responses:
         "200":
           description: OK
-      x-contentType: application/json
-      x-accepts: application/json
   /register/{id}:
-    description: The REST endpoint/path used to get, update, and delete single instances
-      of an `RegisterRequest`.  This path contains `GET`, `PUT`, and `DELETE` operations
-      used to perform the get, update, and delete tasks, respectively.
+    summary: Path used to manage a single RegisterRequest.
+    description: "The REST endpoint/path used to get, update, and delete single instances\
+      \ of an `RegisterRequest`.  This path contains `GET`, `PUT`, and `DELETE` operations\
+      \ used to perform the get, update, and delete tasks, respectively."
     get:
-      description: Gets the details of a single instance of a `RegisterRequest`.
-      operationId: getRegisterRequest
-      parameters:
-      - explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
       responses:
         "200":
           content:
@@ -65,18 +51,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/RegisterResponse'
           description: Successful response - returns a single `RegisterResponse`.
+      operationId: getRegisterRequest
       summary: Get a RegisterRequest
-      x-accepts: application/json
-    summary: Path used to manage a single RegisterRequest.
+      description: Gets the details of a single instance of a `RegisterRequest`.
+    parameters:
+    - name: id
+      schema:
+        type: string
+      in: path
+      required: true
 components:
   schemas:
     RegisterRequest:
-      example:
-        serial: some text
-        name: some text
-        longitude: 3.6
-        latitude: 29.41
-        keyStorePassword: some text
+      title: Root Type for RegisterRequest
+      description: ""
+      type: object
       properties:
         serial:
           type: string
@@ -91,25 +80,32 @@ components:
         keyStorePassword:
           description: KeyStore Password
           type: string
-      title: Root Type for RegisterRequest
-      type: object
+      example:
+        serial: some text
+        name: some text
+        longitude: 3.6
+        latitude: 29.41
+        keyStorePassword: some text
     RegisterResponse:
+      description: ""
+      required:
+      - id
+      - truststore
+      - keystore
+      type: object
+      properties:
+        id:
+          description: ""
+          type: string
+        truststore:
+          format: byte
+          description: ""
+          type: string
+        keystore:
+          format: byte
+          description: ""
+          type: string
       example:
         id: some text
         truststore: <FILE>
         keystore: <FILE>
-      properties:
-        id:
-          type: string
-        truststore:
-          format: byte
-          type: string
-        keystore:
-          format: byte
-          type: string
-      required:
-      - id
-      - keystore
-      - truststore
-      type: object
-
