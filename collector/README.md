@@ -35,7 +35,7 @@ Base image for iot collector.
 
 Build command
 
-    `sudo podman build -t quay.io/cesar_getronics/qiot-sensor-service-collector:33-aarch64 .`
+    sudo podman build -t quay.io/cesar_getronics/qiot-sensor-service-collector:33-aarch64 .
 
 
 Image can found at this [Quay.io repositoy](https://quay.io/repository/cesar_getronics/qiot-sensor-service-collector).
