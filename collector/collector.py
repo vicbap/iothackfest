@@ -26,7 +26,7 @@ try:
     while True:
         # leemos los datos
         payload = {}
-        payload.workstation = 'WORKSTATION'
+        payload.workstation = WORKSTATION
         payload.temperature = bme280.get_temperature()
         payload.pressure = bme280.get_pressure()
         payload.humidity = bme280.get_humidity()
