@@ -1,19 +1,15 @@
 package com.getronics.quarkus.api.register.model;
 
-import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Arrays;
-import org.openapitools.jackson.nullable.JsonNullable;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import java.util.Objects;
+
+import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * RegisterResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2021-05-17T15:27:27.014+02:00[Europe/Madrid]")
 public class RegisterResponse   {
   @JsonProperty("id")
   private String id;
@@ -33,10 +29,7 @@ public class RegisterResponse   {
    * Get id
    * @return id
   */
-  @ApiModelProperty(required = true, value = "")
   @NotNull
-
-
   public String getId() {
     return id;
   }
@@ -54,10 +47,7 @@ public class RegisterResponse   {
    * Get truststore
    * @return truststore
   */
-  @ApiModelProperty(required = true, value = "")
   @NotNull
-
-
   public byte[] getTruststore() {
     return truststore;
   }
@@ -75,10 +65,7 @@ public class RegisterResponse   {
    * Get keystore
    * @return keystore
   */
-  @ApiModelProperty(required = true, value = "")
   @NotNull
-
-
   public byte[] getKeystore() {
     return keystore;
   }

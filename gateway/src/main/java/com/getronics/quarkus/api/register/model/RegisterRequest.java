@@ -1,18 +1,12 @@
 package com.getronics.quarkus.api.register.model;
 
 import java.util.Objects;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.openapitools.jackson.nullable.JsonNullable;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 
 /**
  * RegisterRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2021-05-17T15:27:27.014+02:00[Europe/Madrid]")
 public class RegisterRequest   {
   @JsonProperty("serial")
   private String serial;
@@ -38,7 +32,6 @@ public class RegisterRequest   {
    * Get serial
    * @return serial
   */
-  @ApiModelProperty(value = "")
 
 
   public String getSerial() {
@@ -58,7 +51,6 @@ public class RegisterRequest   {
    * Get name
    * @return name
   */
-  @ApiModelProperty(value = "")
 
 
   public String getName() {
@@ -78,9 +70,6 @@ public class RegisterRequest   {
    * Get longitude
    * @return longitude
   */
-  @ApiModelProperty(value = "")
-
-
   public Double getLongitude() {
     return longitude;
   }
@@ -98,9 +87,6 @@ public class RegisterRequest   {
    * Get latitude
    * @return latitude
   */
-  @ApiModelProperty(value = "")
-
-
   public Double getLatitude() {
     return latitude;
   }
@@ -118,9 +104,6 @@ public class RegisterRequest   {
    * KeyStore Password
    * @return keyStorePassword
   */
-  @ApiModelProperty(value = "KeyStore Password")
-
-
   public String getKeyStorePassword() {
     return keyStorePassword;
   }
