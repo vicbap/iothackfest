@@ -1,0 +1,1 @@
+package getronics.qiot.edge_service.service.sensor;
