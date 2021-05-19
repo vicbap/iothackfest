@@ -16,3 +16,7 @@ You can view the api documentation in swagger-ui by pointing to
 http://localhost:8080/
 
 Change default port value in application.properties
+
+### Commmand ###
+
+sudo npx @openapitools/openapi-generator-cli generate -g spring --library spring-boot -i ./register-service.yaml -o ./ -p groupId=com.getronics.quarkus  -p artifactId=register -p artifactVersion=1.0.0-SNAPSHOT -p basePackage=com.getronics.quarkus.api.register -p configPackage=com.getronics.quarkus.api.register.config -p apiPackage=com.getronics.quarkus.api.register -p modelPackage=com.getronics.quarkus.api.register.model   -p sourceFolder=src/main/java -p dateLibrary=java8 -p java8=true
