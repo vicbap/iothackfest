@@ -7,9 +7,9 @@ from enviroplus import gas
 import requests
 import json
 import os
+import subprocess
 
 URL_GATEWAY = os.environ.get('URL_GATEWAY', 'localhost/report/')
-WORKSTATION = os.environ.get('WORKSTATION', 'getronics')
 
 try:
     from smbus2 import SMBus
@@ -21,12 +21,16 @@ pms5003 = PMS5003()
 bus = SMBus(1)
 bme280 = BME280(i2c_dev=bus)
 
+# Solo leemos una vez el serial
+sp = subprocess.run("cat /sys/firmware/devicetree/base/serial-number", check=True, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+serial-number = sp.stdout.decode("utf-8").rstrip("\x00")
 
 try:
     while True:
+
         # leemos los datos
         payload = {}
-        payload.workstation = WORKSTATION
+        payload.workstation = sp
         payload.temperature = bme280.get_temperature()
         payload.pressure = bme280.get_pressure()
         payload.humidity = bme280.get_humidity()
