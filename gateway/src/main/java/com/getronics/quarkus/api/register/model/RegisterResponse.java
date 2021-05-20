@@ -15,10 +15,10 @@ public class RegisterResponse   {
   private String id;
 
   @JsonProperty("truststore")
-  private byte[] truststore;
+  private String truststore;
 
   @JsonProperty("keystore")
-  private byte[] keystore;
+  private String keystore;
 
   public RegisterResponse id(String id) {
     this.id = id;
@@ -38,7 +38,7 @@ public class RegisterResponse   {
     this.id = id;
   }
 
-  public RegisterResponse truststore(byte[] truststore) {
+  public RegisterResponse truststore(String truststore) {
     this.truststore = truststore;
     return this;
   }
@@ -48,15 +48,15 @@ public class RegisterResponse   {
    * @return truststore
   */
   @NotNull
-  public byte[] getTruststore() {
+  public String getTruststore() {
     return truststore;
   }
 
-  public void setTruststore(byte[] truststore) {
+  public void setTruststore(String truststore) {
     this.truststore = truststore;
   }
 
-  public RegisterResponse keystore(byte[] keystore) {
+  public RegisterResponse keystore(String keystore) {
     this.keystore = keystore;
     return this;
   }
@@ -66,11 +66,11 @@ public class RegisterResponse   {
    * @return keystore
   */
   @NotNull
-  public byte[] getKeystore() {
+  public String getKeystore() {
     return keystore;
   }
 
-  public void setKeystore(byte[] keystore) {
+  public void setKeystore(String keystore) {
     this.keystore = keystore;
   }
 
@@ -85,13 +85,13 @@ public class RegisterResponse   {
     }
     RegisterResponse registerResponse = (RegisterResponse) o;
     return Objects.equals(this.id, registerResponse.id) &&
-        Arrays.equals(this.truststore, registerResponse.truststore) &&
-        Arrays.equals(this.keystore, registerResponse.keystore);
+    		Objects.equals(this.truststore, registerResponse.truststore) &&
+    		Objects.equals(this.keystore, registerResponse.keystore);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, Arrays.hashCode(truststore), Arrays.hashCode(keystore));
+    return Objects.hash(id, truststore, keystore);
   }
 
   @Override

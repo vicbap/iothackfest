@@ -8,32 +8,28 @@ import javax.ws.rs.core.MediaType;
 
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
-import com.getronics.quarkus.api.sensors.model.GasResponse;
-import com.getronics.quarkus.api.sensors.model.ParticulatesResponse;
 import com.getronics.quarkus.api.sensors.model.SystemResponse;
 
 @Path("/")
 @RegisterRestClient(configKey = "sensors-api")
 public interface SensorAPIClient {
-	
-	@Path("/system")
+
 	@GET
-	@Consumes(MediaType.APPLICATION_JSON)
+	@Path("/system/id")
+	@Consumes(MediaType.TEXT_PLAIN)
 	@Produces(MediaType.APPLICATION_JSON)
-	SystemResponse system();
-	
+	SystemResponse getSerialId() throws Exception;
+
+	@GET
 	@Path("/gas/all")
+	@Consumes(MediaType.TEXT_PLAIN)
+	@Produces(MediaType.TEXT_PLAIN)
+	String getGasMeasurement() throws Exception;
+
 	@GET
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_JSON)
-	GasResponse gas();
-	
 	@Path("/particulates/all")
-	@GET
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_JSON)
-	ParticulatesResponse particulates();
-	
-	
+	@Consumes(MediaType.TEXT_PLAIN)
+	@Produces(MediaType.TEXT_PLAIN)
+	String getParticulatesMeasurement() throws Exception;
 
 }
