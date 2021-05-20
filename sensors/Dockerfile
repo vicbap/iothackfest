@@ -15,10 +15,6 @@ COPY --from=builder /usr/src/app/build/default /opt/web
 COPY polymer/images/trd-icon.png /opt/web/images/iot-icon.png  
 COPY polymer/manifest.json /opt/web/
 
-# RUN dnf -y install snapd
-# RUN ln -s /var/lib/snapd/snap /snap
-# RUN snap install gpio-rpi --edge
-
 COPY sensors.py /usr/local/bin/service.py
-EXPOSE 8080
+EXPOSE 8081
 CMD ["python3",  "/usr/local/bin/service.py" ]

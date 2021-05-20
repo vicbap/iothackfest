@@ -9,7 +9,7 @@ from enviroplus import gas
 import json
 
 WEB_ROOT = os.environ.get('WEB_ROOT', '/opt/web/')
-WEB_PORT = os.environ.get('WEB_PORT', 8080)
+WEB_PORT = os.environ.get('WEB_PORT', 8081)
 WEB_HOST = os.environ.get('WEB_HOST', '0.0.0.0')
 STATION_NAME  = os.environ.get('STATION_NAME', 'station')
 
