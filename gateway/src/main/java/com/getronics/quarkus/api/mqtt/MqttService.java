@@ -11,9 +11,9 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.slf4j.Logger;
 
 import io.netty.handler.codec.mqtt.MqttQoS;
-import io.vertx.core.buffer.Buffer;
-import io.vertx.mqtt.MqttClient;
 import io.vertx.mqtt.MqttException;
+import io.vertx.mutiny.core.buffer.Buffer;
+import io.vertx.mutiny.mqtt.MqttClient;
 
 @ApplicationScoped
 public class MqttService {
